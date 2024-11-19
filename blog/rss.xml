@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>01010011 Blog</title>
+        <link>https://your-docusaurus-site.example.com/blog</link>
+        <description>01010011 Blog</description>
+        <lastBuildDate>Wed, 06 Nov 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>ko-KR</language>
+        <item>
+            <title><![CDATA[foo]]></title>
+            <link>https://your-docusaurus-site.example.com/blog/foo</link>
+            <guid>https://your-docusaurus-site.example.com/blog/foo</guid>
+            <pubDate>Wed, 06 Nov 2024 00:00:00 GMT</pubDate>
+            <category>GitHub</category>
+        </item>
+        <item>
+            <title><![CDATA[재사용 가능한 GitHub Actions 만들기 1]]></title>
+            <link>https://your-docusaurus-site.example.com/blog/reusable-actions</link>
+            <guid>https://your-docusaurus-site.example.com/blog/reusable-actions</guid>
+            <pubDate>Fri, 01 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Nodejs App으로 만드는 GitHub Actions]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_SBA1" id="nodejs-app으로-만드는-github-actions">Nodejs App으로 만드는 GitHub Actions<a href="https://your-docusaurus-site.example.com/blog/reusable-actions#nodejs-app%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%8A%94-github-actions" class="hash-link" aria-label="Nodejs App으로 만드는 GitHub Actions에 대한 직접 링크" title="Nodejs App으로 만드는 GitHub Actions에 대한 직접 링크">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="Node.js CI" src="https://your-docusaurus-site.example.com/assets/images/nodejs-ci-eeac3c8d96d9bd9de4be4eaf4d171535.png" class="img_IxQR"></p>
+<p>독후감을 쓸텐데 뭐라고 쓰지?</p>]]></content:encoded>
+            <category>GitHub</category>
+            <category>actions</category>
+        </item>
+    </channel>
+</rss>
