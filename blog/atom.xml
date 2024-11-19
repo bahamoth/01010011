@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://your-docusaurus-site.example.com/blog</id>
+    <id>https://bahamoth.github.io/01010011/blog</id>
     <title>01010011 Blog</title>
     <updated>2024-11-06T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://your-docusaurus-site.example.com/blog"/>
+    <link rel="alternate" href="https://bahamoth.github.io/01010011/blog"/>
     <subtitle>01010011 Blog</subtitle>
-    <icon>https://your-docusaurus-site.example.com/img/logo.svg</icon>
+    <icon>https://bahamoth.github.io/01010011/../img/logo.svg</icon>
     <entry>
         <title type="html"><![CDATA[foo]]></title>
-        <id>https://your-docusaurus-site.example.com/blog/foo</id>
-        <link href="https://your-docusaurus-site.example.com/blog/foo"/>
+        <id>https://bahamoth.github.io/01010011/blog/foo</id>
+        <link href="https://bahamoth.github.io/01010011/blog/foo"/>
         <updated>2024-11-06T00:00:00.000Z</updated>
         <author>
             <name>01010011</name>
@@ -20,12 +20,12 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[재사용 가능한 GitHub Actions 만들기 1]]></title>
-        <id>https://your-docusaurus-site.example.com/blog/reusable-actions</id>
-        <link href="https://your-docusaurus-site.example.com/blog/reusable-actions"/>
+        <id>https://bahamoth.github.io/01010011/blog/reusable-actions</id>
+        <link href="https://bahamoth.github.io/01010011/blog/reusable-actions"/>
         <updated>2024-11-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Nodejs App으로 만드는 GitHub Actions]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_SBA1" id="nodejs-app으로-만드는-github-actions">Nodejs App으로 만드는 GitHub Actions<a href="https://your-docusaurus-site.example.com/blog/reusable-actions#nodejs-app%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%8A%94-github-actions" class="hash-link" aria-label="Nodejs App으로 만드는 GitHub Actions에 대한 직접 링크" title="Nodejs App으로 만드는 GitHub Actions에 대한 직접 링크">​</a></h2>
-<p><img decoding="async" loading="lazy" alt="Node.js CI" src="https://your-docusaurus-site.example.com/assets/images/nodejs-ci-eeac3c8d96d9bd9de4be4eaf4d171535.png" class="img_IxQR"></p>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_SBA1" id="nodejs-app으로-만드는-github-actions">Nodejs App으로 만드는 GitHub Actions<a href="https://bahamoth.github.io/01010011/blog/reusable-actions#nodejs-app%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%8A%94-github-actions" class="hash-link" aria-label="Nodejs App으로 만드는 GitHub Actions에 대한 직접 링크" title="Nodejs App으로 만드는 GitHub Actions에 대한 직접 링크">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="Node.js CI" src="https://bahamoth.github.io/01010011/assets/images/nodejs-ci-eeac3c8d96d9bd9de4be4eaf4d171535.png" class="img_IxQR"></p>
 <p>독후감을 쓸텐데 뭐라고 쓰지?</p>]]></content>
         <author>
             <name>01010011</name>
