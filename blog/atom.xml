@@ -8,12 +8,13 @@
     <subtitle>01010011 Blog</subtitle>
     <icon>https://bahamoth.github.io/01010011/img/logo.svg</icon>
     <entry>
-        <title type="html"><![CDATA[How to Collect Crash Dump?]]></title>
+        <title type="html"><![CDATA[호랑이는 죽어서 가죽을 남기고 프로그램은 죽어서 덤프를 남긴다.]]></title>
         <id>https://bahamoth.github.io/01010011/blog/how-to-collect-crash-dump</id>
         <link href="https://bahamoth.github.io/01010011/blog/how-to-collect-crash-dump"/>
         <updated>2024-11-19T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[서론]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_SBA1" id="서론">서론<a href="https://bahamoth.github.io/01010011/blog/how-to-collect-crash-dump#%EC%84%9C%EB%A1%A0" class="hash-link" aria-label="서론에 대한 직접 링크" title="서론에 대한 직접 링크">​</a></h2>
+        <summary type="html"><![CDATA[tiger]]></summary>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="tiger" src="https://bahamoth.github.io/01010011/assets/images/tiger-5d0083e532ffc889503c91b5a976b4b2.png" class="img_IxQR"></p>
+<h2 class="anchor anchorWithStickyNavbar_SBA1" id="서론">서론<a href="https://bahamoth.github.io/01010011/blog/how-to-collect-crash-dump#%EC%84%9C%EB%A1%A0" class="hash-link" aria-label="서론에 대한 직접 링크" title="서론에 대한 직접 링크">​</a></h2>
 <p>아무리 소프트웨어를 잘 만들었더라도 구동중인 프로그램이 사용자 환경에서 비정상 종료되는 문제는 필연적이다.</p>
 <p>속된 말로 '프로그램이 죽는' 현상이 이러한 비정상 종료에 해당하는데, 개발자 입장에서는 왜 이러한 '죽음'이 발생하는지 파악이 어렵다. 왜냐하면 개발자의 PC에서는 프로그램이 죽지 않기 때문이다.(<a href="https://www.amazon.com/works-Machine-Programming-T-Shirt/dp/B07C9FVM4R" target="_blank" rel="noopener noreferrer">It works on my machine</a>)<br>
 <!-- -->너무도 다양한 사용자 환경은 기상천외한 문제를 일으킨다.(<a href="https://beza1e1.tuxen.de/lore/allergic_car.html" target="_blank" rel="noopener noreferrer">바닐라 아이스크림 알러지가 있는 자동차</a>)</p>
@@ -100,9 +101,9 @@
 <br>
 <p>아래 그림은 Breakpad 프로젝트가 어떻게 동작하는지에 대한 개략적인 flow를 보여준다.
 <img decoding="async" loading="lazy" alt="breakpad flow" src="https://bahamoth.github.io/01010011/assets/images/breakpad-flow-3f2df50e8eabf9ea66f3882c014e5482.png" class="img_IxQR"></p>
-<p>마징가Z 와 그레이트 마징가의 바톤터치</p>
 <h2 class="anchor anchorWithStickyNavbar_SBA1" id="breakpad의-한계와-이를-개선하는-프로젝트들crashpad-rust-minidump">Breakpad의 한계와 이를 개선하는 프로젝트들(Crashpad, Rust-Minidump)<a href="https://bahamoth.github.io/01010011/blog/how-to-collect-crash-dump#breakpad%EC%9D%98-%ED%95%9C%EA%B3%84%EC%99%80-%EC%9D%B4%EB%A5%BC-%EA%B0%9C%EC%84%A0%ED%95%98%EB%8A%94-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%93%A4crashpad-rust-minidump" class="hash-link" aria-label="Breakpad의 한계와 이를 개선하는 프로젝트들(Crashpad, Rust-Minidump)에 대한 직접 링크" title="Breakpad의 한계와 이를 개선하는 프로젝트들(Crashpad, Rust-Minidump)에 대한 직접 링크">​</a></h2>
-<p>Breakpad Client를 사용해보면 가끔씩 제대로 된 덤프가 수집되지 않는 경우가 있다. Breakpad Client가 덤프를 생성할 충분한 시간을 확보하지 못하거나, 덤프 생성 중에 프로세스가 비정상 종료되는 경우가 그 예이다. 앞서 그림을 보면 Breakpad Client는 사용자의 어플리케이션 프로세스 내부에서 동작하도록 설계되어 있는데, 어플리케이션이 종료되는 상황에서는 Breakpad Client가 덤프를 생성할 충분한 시간을 확보하지 못할 수도 있다.<br>
+<p><img decoding="async" loading="lazy" alt="breakpad with caliper" src="https://bahamoth.github.io/01010011/assets/images/breakpad-with-caliper-17c4ce1433c2707451eaad73a8741f17.png" class="img_IxQR">
+Breakpad Client를 사용해보면 가끔씩 제대로 된 덤프가 수집되지 않는 경우가 있다. Breakpad Client가 덤프를 생성할 충분한 시간을 확보하지 못하거나, 덤프 생성 중에 프로세스가 비정상 종료되는 경우가 그 예이다. 앞서 그림을 보면 Breakpad Client는 사용자의 어플리케이션 프로세스 내부에서 동작하도록 설계되어 있는데, 어플리케이션이 종료되는 상황에서는 Breakpad Client가 덤프를 생성할 충분한 시간을 확보하지 못할 수도 있다.<br>
 <a href="https://chromium.googlesource.com/crashpad/crashpad" target="_blank" rel="noopener noreferrer">Crashpad</a>는 이러한 한계를 극복하기 위한 개선 프로젝트로, 별도의 Crash 수집 및 전송을 담당하는 Handler Process를 구성하여 이 문제를 해결하였다.
 <img decoding="async" loading="lazy" alt="crashpad overview" src="https://bahamoth.github.io/01010011/assets/images/crashpad-overview-67ff10cd6f61eddca7160f3110892e13.png" class="img_IxQR"></p>
 <p>한편, Chromium의 Breakpad가 쌓아놓은 유산을 토대로 RIIR(Re-write It in Rust)한 <a href="https://github.com/rust-minidump/rust-minidump" target="_blank" rel="noopener noreferrer">Rust-Minidump</a> 프로젝트도 주목할 만 하다. 2017년 luser라는 개발자가 Rust User Forum에 처음으로 소개한 이 프로젝트는 Rust 언어로 작성하였다는 것 만으로도 다양한 장점(메모리 안정성, 속도, 사용 편의성)을 갖고 있을 뿐 아니라 Rust Crate의 확장성을 활용하여 사용자가 원하는 기능을 쉽게 추가할 수도 있다. 덤프 분석 결과물을 JSON 형태로 출력해주는 편의 기능이나 cli 도구도 제공하므로 덤프 분석을 원하는 개발자들은 다양한 용도로 활용이 가능할 것이다.</p>
