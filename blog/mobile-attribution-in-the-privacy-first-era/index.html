@@ -10,7 +10,7 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton&amp;display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton&amp;family=Orbit&amp;display=swap"><link rel="stylesheet" href="/01010011/assets/css/styles.24792730.css">
-<script src="/01010011/assets/js/runtime~main.7c0938f9.js" defer="defer"></script>
+<script src="/01010011/assets/js/runtime~main.e8d7cffd.js" defer="defer"></script>
 <script src="/01010011/assets/js/main.935b9180.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -20,10 +20,10 @@
 <p>이 글에서는 Apple의 SKAdNetwork(SKAN)와 Google의 Privacy Sandbox로 대표하는 모바일 환경의 개인정보 보호 프레임워크에 대해 설명하고, 어떻게 확률론적으로 모바일 어트리뷰선을 획득하는지에 대해 알아보겠다.</p>
 <h3 class="anchor anchorWithStickyNavbar_SBA1" id="어떻게-알고-오셨어요">어떻게 알고 오셨어요?<a href="#어떻게-알고-오셨어요" class="hash-link" aria-label="어떻게 알고 오셨어요?에 대한 직접 링크" title="어떻게 알고 오셨어요?에 대한 직접 링크">​</a></h3>
 <p>1970년대, 미국 디트로이트의 자동차 판매원 &#x27;조 지라드(Joe Girard)&#x27;는 15년간 13,001대의 차를 팔아 &#x27;세계에서 가장 위대한 세일즈맨&#x27;으로 기네스북에 올랐다.</p>
-<p>그의 성공 비결은 차를 파는 기술이 아니라, 고객을 끊임없이 만들어내는 &#x27;시스템&#x27;에 있었다. 그는 자신의 고객이 될 만한 사람을 소개해 주는 사람들을 **&#x27;버드 도그(Bird Dogs, 사냥개)&#x27;**라고 불렀다. 이발사, 식당 주인, 은행원 등 주변의 모든 사람이 그의 &#x27;버드 도그&#x27;가 될 수 있었다.<br>
+<p>그의 성공 비결은 차를 파는 기술이 아니라, 고객을 끊임없이 만들어내는 &#x27;시스템&#x27;에 있었다. 그는 자신의 고객이 될 만한 사람을 소개해 주는 사람들을 <strong>&#x27;버드 도그(Bird Dogs, 사냥개)&#x27;</strong> 라고 불렀다. 이발사, 식당 주인, 은행원 등 주변의 모든 사람이 그의 &#x27;버드 도그&#x27;가 될 수 있었다.<br>
 <!-- -->그의 규칙은 간단했다. &quot;저에게 손님을 보내주십시오. 그 손님이 차를 사면, 제가 바로 당신에게 25달러를 보내드리겠습니다.&quot;<br>
-<!-- -->이 시스템이 완벽하게 돌아가려면 가장 중요한 전제 조건이 있었다. 바로 **&quot;이 고객을 누가 보냈는가?&quot;**를 한 치의 오차도 없이 파악하는 것이었다.<br>
-<!-- -->조 지라드는 새로운 고객이 오면 가장 먼저 &quot;누가 당신을 제게 보냈습니까?&quot;라고 물었다. 그리고 판매가 성사되면 장부에 꼼꼼히 기록해 두었다가, 약속한 25달러를 소개자에게 반드시 보냈다.</p>
+<!-- -->이 시스템이 완벽하게 돌아가려면 가장 중요한 전제 조건이 있었다. 바로 <strong>&quot;이 고객을 누가 보냈는가?&quot;</strong> 를 한 치의 오차도 없이 파악하는 것이었다.<br>
+<!-- -->조 지라드는 새로운 고객이   오면 가장 먼저 &quot;누가 당신을 제게 보냈습니까?&quot;라고 물었다. 그리고 판매가 성사되면 장부에 꼼꼼히 기록해 두었다가, 약속한 25달러를 소개자에게 반드시 보냈다.</p>
 <p>조 지라드의 일화와 마찬가지로 모바일 앱 서비스 생태계에서는 어떤 광고활동이나 마케팅이 고객의 유입이나 결제로 이어졌는지 추적하고 그 공로를 찾아내는데, 그 과정을 Mobile Attribution 이라고 한다.</p>
 <h2 class="anchor anchorWithStickyNavbar_SBA1" id="deterministic-attribution">Deterministic Attribution<a href="#deterministic-attribution" class="hash-link" aria-label="Deterministic Attribution에 대한 직접 링크" title="Deterministic Attribution에 대한 직접 링크">​</a></h2>
 <p>Attribution을 정확히 측정하는 것은 매우 중요하다. 이 손님이 이발사의 소개를 받고 왔는지, 은행원의 소개를 받고 왔는지를 알아야 누구에게 얼마의 광고료를 줄지 판단할 수 있기 때문이다.<br>
@@ -39,13 +39,13 @@
 <li>사용자가 앱을 설치, 처음으로 실행</li>
 <li>100% 정확한 사용자 유입 경로를 알 수 있는 Attribution 획득</li>
 </ol>
-<p>이러한 Deterministic 한 Attribution 획득 방  식으로 인해, 광고주들은 어떤 광고가 어떤 사용자를 유입시켰는지에 대한 명확한 데이터를 확보할 수 있었고, 이는 모바일 광고 생태계를 성장시키는 기반이었다. 하지만 이제 공짜점심은 끝났다. 모바일 플랫폼의 개인정보 보호 강화 기조 아래, 사용자 동의 없이 Deterministic Attribution 획득은 불가능하다. 이 글을 읽고 있는 당신도 그러겠지만, 사용자들은 더 이상 나를 특정할 수 있는 개인정보 제공에 동의하지 않는다.</p>
+<p>이러한 Deterministic 한 Attribution 획득 방식으로 인해, 광고주들은 어떤 광고가 어떤 사용자를 유입시켰는지에 대한 명확한 데이터를 확보할 수 있었고, 이는 모바일 광고 생태계를 성장시키는 기반이었다. 하지만 이제 공짜점심은 끝났다. 모바일 플랫폼의 개인정보 보호 강화 기조 아래, 사용자 동의 없이 Deterministic Attribution 획득은 불가능하다. 이 글을 읽고 있는 당신도 그러겠지만, 사용자들은 더 이상 나를 특정할 수 있는 개인정보 제공에 동의하지 않는다.</p>
 <h2 class="anchor anchorWithStickyNavbar_SBA1" id="probabilistic-attribution">Probabilistic Attribution<a href="#probabilistic-attribution" class="hash-link" aria-label="Probabilistic Attribution에 대한 직접 링크" title="Probabilistic Attribution에 대한 직접 링크">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_SBA1" id="apple의-attapptrackingtransparency와-skanskadnetwork-framework">Apple의 ATT(AppTrackingTransparency)와 SKAN(SKAdNetwork) Framework<a href="#apple의-attapptrackingtransparency와-skanskadnetwork-framework" class="hash-link" aria-label="Apple의 ATT(AppTrackingTransparency)와 SKAN(SKAdNetwork) Framework에 대한 직접 링크" title="Apple의 ATT(AppTrackingTransparency)와 SKAN(SKAdNetwork) Framework에 대한 직접 링크">​</a></h3>
 <p>상술하였듯, 애플은 더 이상 사용자 동의 없이 IDFA를 제공하지 않는다.(정확히 말하면 &#x27;명시적인&#x27; 사용자 동의 없이).</p>
 <p><img decoding="async" loading="lazy" alt="empty IDFA" src="/01010011/assets/images/empty_idfa-bf26f67053730531a55d9b54cf23289b.png" class="img_IxQR"></p>
 <p>따라서 iOS14+ 이후부터는 기기의 IDFA 값을 가져오려면 ATT(AppTrackingTransparency) 프레임워크를 통해 반드시 명시적으로 사용자의 권한을 획득하여야 한다. 사용자가 동의를 거부하면 상기 스샷과 같이 IDFA 값은 000000~ 으로 비워진다.</p>
-<p>이는 광고주 및 Ad Network 모두에게 치명적 인 문제다. 내 광고가 누구에 의해 노출이 되었는지 명확히 알지 못하기 때문에 어느 경로를 통해 고객이 유입되었는지 파악할 수 없고, 광고 비즈니스의 대전제(어떻게 알고 오셨어요?)가 무너지게 된다.</p>
+<p>이는 광고주 및 Ad Network 모두에게 치명적인 문제다. 내 광고가 누구에 의해 노출이 되었는지 명확히 알지 못하기 때문에 어느 경로를 통해 고객이 유입되었는지 파악할 수 없고, 광고 비즈니스의 대전제(어떻게 알고 오셨어요?)가 무너지게 된다.</p>
 <p>대안으로, 애플은 개인을 특정할 수는 없는 제한된 정보를 제공하는 광고 식별자 획득 방식을 제공하는데, 그것이 SKAN(SKAdNetwork)이다.</p>
 <p><img decoding="async" loading="lazy" alt="SKAN winning flow" src="/01010011/assets/images/skan_flow-b46d475c0e28be2ceeaa6b0d56e19ec4.png" class="img_IxQR"></p>
 <p>SKAN 의 데이터 흐름은 다음과 같다.</p>
@@ -70,7 +70,7 @@
 <p><img decoding="async" loading="lazy" alt="Privacy Sandbox flow" src="/01010011/assets/images/sandbox_flow-cab0829337b29544487b725c511d737b.png" class="img_IxQR"></p>
 <p>Google의 Privacy Sandbox가 기존의 Attribution 획득방식과 기술적으로 가장 크게 구별되는 부분은 사용자 디바이스 안에서 Ad Network 정보와 매칭되는 Attribution을 만들어낸다는 점이다.</p>
 <p>디바이스 안에서 Attribution을 획득하기 때문에 광고 비즈니스 사업자는 사용자의 개인정보를 디바이스 밖으로 빼내지 넘기지 않고도 유의미한 사용자 전환 정보를 얻을 수 있다.</p>
-<p>이렇게 사용자 단말에서 생성된 익명화된 Attribution은 Attribution Reporting API(줄여서 ARA)를 통해 수집된다.</p>
+<p>  이렇게 사용자 단말에서 생성된 익명화된 Attribution은 Attribution Reporting API(줄여서 ARA)를 통해 수집된다.</p>
 <p>ARA를 통해 수집되는 리포트는 크게 2가지 유형이 존재한다.</p>
 <ul>
 <li><strong>Event-Level Report:</strong> &quot;어떤 광고가 전환을 유도했는가?&quot;와 같이 제한적이지만 세분화된 정보</li>
@@ -83,7 +83,7 @@
 <p><strong>Cloud Trusted Execution Environment(TEE)?</strong><br>
 <!-- -->TEE란 구글에서 제안하는 보안 기준을 충족하는 &amp; 신뢰할만한 클라우드 제공자의 인프라 위에서 동작하는 격리된 환경이다. TEE의 보안 기준을 충족하면 Ad Tech Platform 기업에서 자체적으로 구축, 운영할 수 있다.</p>
 </blockquote>
-<h2 class="anchor anchorWithStickyNavbar_SBA1" id="executive-summary">Executive Summary<a href="#executive-summary" class="hash-link" aria-label="Executive Summary에 대한 직접 링크" title="Executive Summary에 대한 직접 링크">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_SBA1" id="executive-summary">Executive Summary<a href="#executive-summary" class="hash-link" aria-label="Executive Summary 에 대한 직접 링크" title="Executive Summary에 대한 직접 링크">​</a></h2>
 <p>지금까지 개인정보 보호의 시대에 어떻게 Mobile Attribution 을 획득할 것인가에 대한 내용을 알아보았다. 과거처럼 Deterministic하게 Attribution을 획득하던 시대는 끝났으며, 각 이해관계자들은 개인정보 보호의 시대의 Attribution 획득 방식을 준비해야 한다.</p>
 <p>결정론적 시대의 종말: 개인정보 보호 강화로 IDFA, GAID 기반의 1:1 사용자 추적이 불가능해졌다.</p>
 <p>확률론적 시대로의 전환: 이제는 명확한 데이터 대신, 제한된 데이터를 바탕으로 성과를 &#x27;추론&#x27;해야 한다.</p>
